@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MineDevelopers - Item Description</title>
+    <link rel="stylesheet" type="text/css" href="items.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>MineDevelopers Gold Subscription</h1>
+      <img src="Iconarchive-Badge-Trophy-Badge-Trophy-15.256.png" alt="Item Image">
+      <p class="description">This Subscription contains  : </p>
+	  <p class="description">- All the features from previous Tiers)</p>
+	  <p class="description">- Better Priority support and response times than previous Tiers</p>
+	  <p class="description">- 15 Premium Plugins From Our Collection</p>
+	  <p class="description">- Limited Custom Plugins ( script )</p>
+	  <p class="description">- Custom Discord Server Template</p>
+      <div class="price">€15.99/<u>month</u></div>
+      <form action="submit.php" method="post">
+       <p class="note"><strong>IMPORTANT NOTE:</strong> Please enter your email and Discord username when you subscribe.</p>
+      </form>
+       <div id="paypal-button-container-P-0V366461BX960061DMRNFHSI"></div>
+<script src="https://www.paypal.com/sdk/js?client-id=sb&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+<script>
+  paypal.Buttons({
+      style: {
+          shape: 'rect',
+          color: 'gold',
+          layout: 'vertical',
+          label: 'subscribe'
+      },
+      createSubscription: function(data, actions) {
+        return actions.subscription.create({
+          /* Creates the subscription */
+          plan_id: 'P-0V366461BX960061DMRNFHSI'
+        });
+      },
+      onApprove: function(data, actions) {
+        alert(data.subscriptionID); // You can add optional success message for the subscriber here
+      }
+  }).render('#paypal-button-container-P-0V366461BX960061DMRNFHSI'); // Renders the PayPal button
+</script>
+
+    </div>
+	<div class="container">
+  <a href="home.html" class="return-home-btn">Return to Home Page</a>
+</div>
+  </body>
+</html>

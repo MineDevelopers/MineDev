@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MineDevelopers - Item Description</title>
+    <link rel="stylesheet" type="text/css" href="items.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>MineDevelopers Ruby Subscription</h1>
+      <img src="Iconarchive-Badge-Trophy-Badge-Trophy-16.512.png" alt="Item Image">
+      <p class="description">This Subscription contains  : </p>
+	  <p class="description">- All the features from previous Tiers)</p>
+	  <p class="description">- Top of the line Priority support and response times</p>
+	  <p class="description">- 20 Premium Plugins From Our Collection</p>
+	  <p class="description">-- Custom Plugins ( java & script )</p>
+	  <p class="description">- Custom Discord Server Template</p>
+	  <p class="description">- Access to beta testing and new feature releases before anyone else</p>
+      <div class="price">€22.49/<u>month</u></div>
+      <form action="submit.php" method="post">
+       <p class="note"><strong>IMPORTANT NOTE:</strong> Please enter your email and Discord username when you subscribe.</p>
+      </form>
+      <div id="paypal-button-container-P-6SL461187B6766743MRNFQ4A"></div>
+<script src="https://www.paypal.com/sdk/js?client-id=sb&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+<script>
+  paypal.Buttons({
+      style: {
+          shape: 'rect',
+          color: 'gold',
+          layout: 'vertical',
+          label: 'subscribe'
+      },
+      createSubscription: function(data, actions) {
+        return actions.subscription.create({
+          /* Creates the subscription */
+          plan_id: 'P-6SL461187B6766743MRNFQ4A'
+        });
+      },
+      onApprove: function(data, actions) {
+        alert(data.subscriptionID); // You can add optional success message for the subscriber here
+      }
+  }).render('#paypal-button-container-P-6SL461187B6766743MRNFQ4A'); // Renders the PayPal button
+</script>
+
+    </div>
+	<div class="container">
+  <a href="home.html" class="return-home-btn">Return to Home Page</a>
+</div>
+  </body>
+</html>
