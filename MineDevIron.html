@@ -16,35 +16,22 @@
 	  <form action="submit.php" method="post">
   <p class="note"><strong>IMPORTANT NOTE:</strong> Please enter your email and Discord username when you subscribe.</p>
   </form>
-      <div id="paypal-button-container-P-10593622FL0059355MRNEYEY"></div>
-<script src="https://www.paypal.com/sdk/js?client-id=AfJWIIlANOrMjeD_pfpMIylTPO7ttC5WA-q4RbqmcAAJzw8NkDDKTjcDiytqWQbwY05tS9V9C-dhjnBZ&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
-<script>
-  paypal.Buttons({
-      style: {
-          shape: 'rect',
-          color: 'gold',
-          layout: 'vertical',
-          label: 'subscribe'
-      },
-      createSubscription: function(data, actions) {
-        return actions.subscription.create({
-          /* Creates the subscription */
-          plan_id: 'P-10593622FL0059355MRNEYEY'
-        });
-      },
-      onApprove: function(data, actions) {
-        alert(data.subscriptionID); // You can add optional success message for the subscriber here
-      }
-  }).render('#paypal-button-container-P-10593622FL0059355MRNEYEY'); // Renders the PayPal button
-</script>
+     <div class="subscribe-container">
+  <div class="subscribe-box">
+    <a href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-10593622FL0059355MRNEYEY" class="subscribe-button">SUBSCRIBE</a>
+  </div>
+  <div class="powered-by-text">Powered By <span class="hhh-text">Pay</span> <span class="hhh-text">Pal</span></div>
+</div>
+
     </div>
 	<div class="container">
-  <a href="home.html" class="return-home-btn">Return to Home Page</a>
+  <a href="MineDevhome.html" class="return-home-btn">Return to Home Page</a>
 </div>
 <form action="submit.php" method="post">
   <p><strong>IMPORTANT NOTE:</strong> Please enter your email and Discord username when you subscribe.</p>
   
   </body>
 </html>
+
 
   
