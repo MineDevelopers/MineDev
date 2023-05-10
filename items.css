@@ -101,10 +101,12 @@ img {
 
 .powered-by-text {
   color: gray;
-  font-size: 18px;
+  font-size: 12px;
   text-align: center;
   margin-top: 10px;
+  font-weight: bold;
 }
+
 
 .hhh-text {
   color: darkblue;
