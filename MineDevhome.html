@@ -148,7 +148,7 @@
 						</div>
 						<div class="store-text-description">
 							<h4>Website Creator</h4>
-							<span>€28.49 <u>One Time</u> </span>
+							<span>€25.49</span>
 							<a href="MineDevSiteBuilder.html" target="_blank">
 								<button class="buy-now">Buy Now</button>
 							</a>
@@ -197,6 +197,43 @@
 						</script>
 					</div>
 				</div>
+				<body translate="no" >
+  <div id="output" 
+       style=	"display: inline-block;
+		font-family: monospace;
+		font-size: 20px;
+		text-align: right;
+		color: #85929E; 
+		border-radius: 5px; 
+		padding: 5px; 
+		background-color: rgba(0, 0, 0, 0.50);">
+  </div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js'></script>
+  <script>
+// https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
+var urlParams;
+(function () {
+    var match,
+        pl     = /\+/g,  // Regex for replacing addition symbol with a space
+        search = /([^&=]+)=?([^&]*)/g,
+        decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+        query  = window.location.search.substring(1);
+    urlParams = {};
+    while (match = search.exec(query))
+       urlParams[decode(match[1])] = decode(match[2]);
+})();
+var output = document.getElementById("output");
+if (urlParams["style"]) output.setAttribute("style", urlParams["style"]);
+if (urlParams["bodyStyle"]) document.body.setAttribute("style", urlParams["bodyStyle"]);
+var c;
+setInterval(
+c = function() {
+	    output.innerText = moment().format(urlParams["format"] ||' dddd, MMMM Do, YYYY | hh:mm:ss A');
+//    output.innerText = moment().format(urlParams["format"] || '');
+}, 1000);
+c();
+  </script>
 				<div>
 					<h2 class="title">Reach out to us</h2>
 					<div class="contact" id="contact" style="padding-bottom: 10px !important;">
@@ -207,8 +244,17 @@
 							</h5>
 							<div class="email-contact">
 								<input placeholder="Email" type="email" style="margin: 8px 0px !important;" />
-								<button class="w3-btn w3-red w3-round" style="width: 100px; padding:3px 10px !important">Subscribe</button>
-							</div>
+								<button class="w3-btn w3-red w3-margin-top w3-round" onclick="register()">Register</button>
+                            </div>
+						<script>
+							function register() {
+								var discordInput = document.getElementById("discord-name");
+								var emailInput = document.getElementById("email");
+								discordInput.value = "";
+								emailInput.value = "";
+								alert("Thank you for your registration !");
+							}
+						</script>
 							<br />
 							<a href="FeedbackPage.html" target="_blank" class="feedback-btn">
 								Give Us Feedback
@@ -228,9 +274,9 @@
 					  }
 					}
 				</script>
+				
 			</div>
 		</main>
 	</body>
 </html>
-
 
